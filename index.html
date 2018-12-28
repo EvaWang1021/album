@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5音乐相册-珠峰培训</title>
+
+    <!-- IMPORT CSS -->
+
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- COMPUTED REM -->
+    <script>
+        ~ function () {
+            function computed() {
+                var HTML = document.documentElement,
+                    deviceW = HTML.clientWidth,
+                    designW = 375,
+                    maxW = 750,
+                    ratio = deviceW / designW;
+                deviceW >= maxW ? ratio = maxW / designW : null;
+                HTML.style.fontSize = ratio * 100 + 'px';
+            }
+            computed();
+            window.addEventListener('resize', computed, false);
+        }();
+        ~ function () {
+            // 获取需要的元素
+            var musicBox = document.querySelector('.musicBox');
+            musicAudio = document.querySelector('musicAudio');
+            // 一加载页面就播放，封装的方法
+            function musicplay(){
+                musicAudio.play;
+                musicBox.className = 'musicBox move';
+                document.removeEventListener("touchstart",musicplay,false);
+            }
+            // 加载页面就播放,IOS手机微信端对于音乐的自动播放存在BUG（经常没有声音），我们需要单独处理一下。
+            musicplay();
+            document.addEventListener("WeixinJSBridgeReady",musicplay,false);
+            document.addEventListener("touchstart",musicplay,false);
+            
+            //点击控制播放
+            musicBox.onclick = function () {
+                //  当前处于暂停状态
+                if (musicAudio.paused) {
+                    musicAudio.play;
+                    musicBox.className = 'musicBox move';
+                    return;
+                }
+                // 当前处于播放状态
+                musicAudio.paused;
+                musicBox.className = 'musicBox';
+            };
+        }();
+    </script>
+</head>
+
+<body>
+    <!-- MAIN存放所有内容：它最大宽度750 -->
+    <main class="mainBox">
+        <!-- SWIPER滑屏骨架（固定） -->
+        <!-- 音乐播放 -->
+        <a href="" class="musicBox move"></a>
+        <audio>
+            <source src="audio/remembrance_of_youth.m4a" controls loop autoplay preload="none" class="musiAudio">
+            <!-- controls 页面中可显示播放器
+                 loop 循环播放
+                 autoplay 自动播放
+                 preload="none"预加载方式
+                         "auto"加载页面的时候就把音频文件进行加载（导致页面第一次加载速度变慢）
+                         "metadata"加载页面的时候至加载音频的基础信息，播放的时候才加载主题内容。
+            -->
+            <!-- <source src="audio/remembrance_of_youth.m4a" type="audio/mpeg">
+                 <source src="audio/remembrance_of_youth.ogg" type="audio/ogg">
+                 <source src="audio/remembrance_of_youth.wav" type="audio/wav"> -->
+            <!-- 当前浏览器不兼容Audio或者此处使用Flash播放器播放 ,移动端之需要写一套audio,直接引进即可-->
+        </audio>
+
+        <!-- 
+         <video src="" poster="设置封面图"></video>
+         -->
+        <!-- 滑动提示按钮 -->
+        <a href="" class="previousTip"></a>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- PAGE 1 -->
+                <div class="swiper-slide page1">
+                    <img src="image/index_1.png" alt="" class="ani" swiper-animate-effect="bounceInRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.4s">
+                    <!-- 
+                        class='ani' 想让谁有动画，这是必须有的swiper-animate-effect设置动画效果（animate.min.css中支持的动画
+                        效果都可以，)或者是自己居于@keyframe设置的自动化效果
+                        swiper-animate-duration 设置动画时间
+                        swiper-animate-dely 设置动画延迟时间                       
+                     -->
+                    <img src="image/index_2.png" alt="" class="ani" swiper-animate-effect="bounceInLeft"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.6s">
+                    <img src="image/index_3.png" alt="" class="ani" swiper-animate-effect="bounceInDown"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.5s">
+                    <img src="image/index_4.png" alt="" class="ani" swiper-animate-effect="flipInY"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.4s">
+                    <img src="image/index_5.png" alt="" class="ani" swiper-animate-effect="rotateInDownRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="1.5s">
+                </div>
+
+                <!-- PAGE 2 -->
+                <div class="swiper-slide page2">
+                    <img src="image/page2_2.png" alt="" class="ani" swiper-animate-effect="bounceInLeft"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.6s">
+                    <img src="image/page2_3.png" alt="" class="ani" swiper-animate-effect="rotateInDownRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="1.5s">
+                    <img src="image/page2_4.png" alt="" class="ani" swiper-animate-effect="rotateInDownRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="1.5s">
+                    <img src="image/page2_5.png" alt="" class="ani" swiper-animate-effect="rotateInDownRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="1.5s">
+                    <img src="image/page2_7.png" alt="" class="ani" swiper-animate-effect="bounceInRight"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.4s">
+                    <img src="image/page2_8.png" alt="" class="ani" swiper-animate-effect="flipInY"
+                        swiper-animate-duration="1s" swiper-animate-dely="0.4s">
+                    <img src="image/page2_9.png" alt="">
+                    <div class="text">
+                        <p alt="" class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s"
+                            swiper-animate-dely="0.4s">劝君莫惜金缕衣，</p>
+                        <p>劝君需惜少年时。</p>
+                        <p>花开堪折直须折，</p>
+                        <p>莫待无花空折枝。</p>
+                    </div>
+                    <div class="photo">
+                        <img src="image/person_1.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- PAGE 3 -->
+                <div class="swiper-slide page3">
+                    <img src="image/page3_1.png" alt="">
+                    <img src="image/page3_3.png" alt="">
+
+
+                    <div class="concat">
+                        <img src="image/zhou.png" alt="">
+                        <div class="text">
+                            <p>扫码领取</p>
+                            <p>课程视频</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- IMPORT JS -->
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate1.0.3.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

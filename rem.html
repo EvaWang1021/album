@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端开发必设置viewport 设置页面规则
+         width=device-width 设置HTML页面的宽度设备的宽度一致
+         initial-scale=1.0" 设置页面初始缩放比例是1
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        ~ function () {
+            function computed() {
+                var HTML = document.documentElement,
+                    deviceW = HTML.clientWidth,
+                    designW = 375,
+                    maxW = 750,
+                    ratio = deviceW / designW;
+                if (deviceW >= maxW) {
+                    HTML.style.fontSize = maxW / designW * 100 + 'px';
+                    return;
+                }
+                HTML.style.fontSize = ratio * 100 + 'px';
+            }
+            computed();
+            window.addEventListener('resize', computed, false);
+        }();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

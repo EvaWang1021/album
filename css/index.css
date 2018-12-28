@@ -1,0 +1,286 @@
+html {
+    /* 375PX设计稿：1REM=100PX */
+    font-size: 100px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainBox {
+    margin: 0 auto;
+    max-width: 750px;
+    height: 100%;
+}
+/* swiper基础 */
+.swiper-container,
+.swiper-slide {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ==PAGE1== */
+.page1 {    
+    background-image: url('../image/index_6.png');
+    background-size: cover;
+}
+.page1 img{
+    position: absolute;
+}
+.page1 :nth-child(1){
+    width: 3.44rem;
+    height: 1.74rem;
+    right: 0;
+    top: 0.27rem;
+}
+.page1 :nth-child(2){
+    width: 100%;
+    height: 2.75rem;
+    left: 0;  
+    bottom: 0;
+}
+.page1 :nth-child(3){
+    width: 1.60rem;
+    height: 1.05rem;
+    top: 50%;
+    left: 50%;  
+    margin-left: -0.9rem;
+    margin-top: -.125rem;
+}
+.page1 :nth-child(4){
+    width: 1.25rem;
+    height: 1.4rem;
+    top: 50%;
+    left: 50%;  
+    margin-left: -1.5rem;
+    margin-top: -1.5rem;
+}
+.page1 :nth-child(5){
+    width: 2m;
+    height: 2rem;
+    top: 50%;
+    left: 50%;  
+    margin-left: -0.25rem;
+    margin-top: -1.5rem;
+}
+/* 所有图片高度可以不写，可以让其自适应。除非限定在某个高度中，必需设定高度 */
+/* ==PAGE2== */
+.page2 {    
+    background-image: url('../image/page2_1.jpg');
+    background-size: cover;
+}
+/* 子代选择器 */
+.page2>img{
+   position: absolute;
+}
+.page2 img:nth-child(1){
+    /* 获取。page2所有儿子中的第一个，并且他还是image才可以 */
+}
+.page2>img:nth-of-type(1){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     width:1.1rem;
+     height: .8rem;
+     left: .4rem;
+     top: .65rem;
+
+}
+.page2>img:nth-of-type(2){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     width:1.1rem; 
+     right: .3rem;
+     top: .6rem;
+
+}
+.page2>img:nth-of-type(3){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     width:0.8rem;
+     right: .3rem;
+     top: 1.4rem;
+
+}
+.page2>img:nth-of-type(4){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     width:0.9rem;
+     right: .2rem;
+     top: 2.7rem;
+
+}
+.page2>img:nth-of-type(5){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     left:.2rem;  
+     width:0.9rem;
+     bottom: .25rem;
+
+}
+.page2>img:nth-of-type(6){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+     left:50%;
+     margin-left: -.45rem;
+     width:0.9rem;
+     bottom: .25rem;
+
+}
+.page2>img:nth-of-type(7){
+    /* 获取。page2所有儿子图片中的第一个
+     */
+    right: .2rem;
+     width:0.9rem;
+     bottom: .25rem;
+
+}
+.page2 .text{
+    position: absolute;
+    top:1.5rem;
+    left: .4rem;
+    
+
+}
+.page2 .text p{
+    line-height: .32rem;
+    font-size: .16rem;
+    color: rgb(83, 64,27);
+}
+.page2 .photo{
+    position: absolute;
+    width: 2.72rem;
+    left:50%;
+    margin-left: -1.56rem;
+    bottom: 1.1rem;
+    padding: .2rem;
+    height: 1.62rem;
+    background: url('../image/page2_6.png') no-repeat;
+    background-size: 100% 100%;
+   }
+.page2 .photo img{
+    width: 2.72rem; 
+    height: 1.62rem;
+   } 
+
+
+/* ==PAGE3== */
+/* 为了防止特定手机设备中元素发生重叠，我们样式布局大的时候可以使用百分比处理（不推荐） ，太麻烦。*/
+.page3 {
+    background: url('../image/page2_1.jpg') no-repeat;
+    background-size: cover;
+}
+.page3>img
+{
+    position: absolute;
+}
+.page3>img:nth-of-type(1){
+    width: 83%;
+    height: 25%;
+    top: 4%;
+    left: 50%;
+    margin-left: -41.5%;
+}
+.page3>img:nth-of-type(2){
+  
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  
+   }
+   .page3 .concat{
+    position: absolute;
+    width: 74%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    margin-top: -15%;
+    margin-left: -37%;
+    background: url('../image/page3_2.png') no-repeat;
+    background-size: 100% 100%;
+   }
+   .page3 .concat .text,.page3 .concat img{
+       /* 他的所有百分比都是相对于conact */
+       position: absolute;
+       width: 45%;
+       height: 62%;
+       top: 50%;
+       margin-top: -22%;    
+       left: 11%;  
+   }
+   .page3 .concat .text {
+        right: -4%;
+        left: auto;
+   }
+   .page3 .concat .text p{
+       /* 文字不安百分比 */
+      font-size: .16rem;
+      color: white;
+      line-height: .35rem;
+      letter-spacing: .06rem;
+   }
+/* 在某些特定宽高的手机中，可能发生重叠。此时我们基于@media进行微调 */
+@media all and(max-height:500px)
+{
+    .page2 .photo{
+        bottom: .7rem;
+    }
+    .page2>img:nth-of-type(5),.page2>img:nth-of-type(6),.page2>img:nth-of-type(7){
+        bottom: .05rem;
+    }
+}
+/* 百分比：图片拉伸，不好调不好算；rem虽然要微调，但是比较好 */
+.mainBox{
+    position: relative;
+}
+.mainBox .previousTip{
+    /* 提示按钮 */
+    position: absolute;
+    width: .25rem;
+    height: .2rem;
+    left: 50%;
+    bottom: .25rem;
+    margin-left: -.125rem;
+    z-index: 99999;
+    background: url('../image/arrow.png') no-repeat;
+    background-size: 100% 100%;
+    animation: previousTipMove .6s ease infinite;
+}
+@keyframes previousTipMove{
+    0%{
+        transform: translateY(0);
+        
+    }
+    100%{
+        transform: translateY(-.05rem);        
+    }
+
+}
+/* 关于音乐 */
+.mainBox .musicBox{
+    position: absolute;
+    top: .15rem;
+    right: .15rem;
+    width: .3rem;
+    height: .3rem;
+    background: url('../image/music.svg') no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+}
+/* mainBox下，一个标签具有musicBox和move两个标签 */
+.mainBox .musicBox.move{
+    animation: musicMove 1s linear infinite both;
+}
+
+/* 音乐图标动画 */
+@keyframes musicMove{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
